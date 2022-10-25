@@ -1,0 +1,165 @@
+/*fonts*/
+
+@font-face {
+  font-family: 'Gilroy';
+  src: url('./fonts/Gilroy-Regular.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Gilroy';
+  src: url('./fonts/Gilroy-Medium.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'Gilroy';
+  src: url('./fonts/Gilroy-SemiBold.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: 'Gilroy';
+  src: url('./fonts/Gilroy-Bold.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 700;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Gilroy', Arial, Helvetica, sans-serif;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  list-style: none;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  margin: 0;
+}
+
+.container {
+  margin: 0 auto;
+  width: 95%;
+  max-width: 1140px;
+}
+
+.section {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.section__headline {
+  width: 60%;
+  margin-bottom: 20px;
+}
+
+.section__title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.section__subtitle {
+  text-align: center;
+}
+
+.riddle {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+}
+
+.riddle__block {
+  padding: 20px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 20px;
+  border: 1px solid black;
+  height: 200px;
+  display: flex;
+}
+
+.riddle__block:nth-child(2) {
+  border-left: none;
+  border-right: none;
+}
+
+.riddle__block-content {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  align-items: center;
+}
+
+.items {
+  display: flex;
+  column-gap: 20px;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 5px;
+}
+
+.item__person {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  color: white;
+  font-weight: 700;
+  background: rgb(128, 59, 255);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.item__button, .riddle__button {
+  font-weight: 600;
+  color: white;
+  background-color: rgb(252, 87, 46);
+  border-radius: 4px;
+  border: none;
+  padding: 5px;
+  cursor: pointer;
+  transition: background-color .3s;
+}
+
+.item__button:hover, .riddle__button:hover {
+  background-color: rgb(252, 56, 7);
+}
+
+.riddle__boat {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgb(131, 93, 58);
+  width: 200px;
+  height: 80px;
+  border-radius: 50px;
+}
+
+.riddle__boat .item__person {
+  background: rgb(145, 165, 255);
+}
+
+.riddle__buttons {
+  display: flex;
+  column-gap: 10px;
+}

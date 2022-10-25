@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./main.css">
+  <title>Волк, коза и капуста</title>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="container">
+      <div class="section">
+        <div class="section__headline">
+          <h2 class="section__title">Волк, коза и капуста</h2>
+          <div class="section__subtitle">Крестьянину нужно перевезти через реку волка, козу и капусту. Но лодка такова, что в ней может поместиться только крестьянин, а с ним или волк, или коза, или капуста. Но если оставить волка с козой, то волк съест козу, а если оставить козу с капустой, то коза съест капусту. Как перевезти всех на другой берег?</div>
+        </div>
+        <div class="riddle">
+          <div class="riddle__block">
+            <h3 class="riddle__block-title">Левый берег</h3>
+            <div class="riddle__block-content">
+              <ul class="riddle__items items" id="start"></ul>
+            </div>
+          </div>
+          <div class="riddle__block">
+            <h3 class="riddle__block-title">Лодка</h3>
+            <div class="riddle__block-content">
+              <div class="riddle__boat" id="mid"></div>
+              <ul class="riddle__buttons">
+                <li class="riddle__buttons-item">
+                  <button class="button riddle__button" id="changePrev">Поменять местами</button>
+                </li>
+                <li class="riddle__buttons-item">
+                  <button class="button riddle__button" id="prev">Вернуть на берег</button>
+                </li>
+                <li class="riddle__buttons-item">
+                  <button class="button riddle__button" id="next">Перевезти</button>
+                </li>
+                <li class="riddle__buttons-item">
+                  <button class="button riddle__button" id="changeNext">Поменять местами</button>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="riddle__block">
+            <h3 class="riddle__block-title">Правый берег</h3>
+            <div class="riddle__block-content">
+              <ul class="riddle__items items" id="end"></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="./index.js"></script>
+</body>
+</html>
