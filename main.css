@@ -79,24 +79,23 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 .riddle {
-  display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  height: 410px;
+  background: url("./images/beach.png") center bottom no-repeat;
+  background-size: cover;
 }
 
 .riddle__block {
+  width: 33%;
   padding: 20px 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
   row-gap: 20px;
-  border: 1px solid black;
-  height: 200px;
   display: flex;
-}
-
-.riddle__block:nth-child(2) {
-  border-left: none;
-  border-right: none;
 }
 
 .riddle__block-content {
@@ -121,45 +120,93 @@ h1,h2,h3,h4,h5,h6 {
 .item__person {
   width: 70px;
   height: 70px;
-  border-radius: 50%;
-  color: white;
-  font-weight: 700;
-  background: rgb(128, 59, 255);
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
-.item__button, .riddle__button {
+.item__person[data-name='волк'] {
+  background: url("./images/волк.png") center center no-repeat;
+  background-size: contain;
+}
+
+.item__person[data-name='коза'] {
+  background: url("./images/коза.png") center center no-repeat;
+  background-size: contain;
+}
+
+.item__person[data-name='капуста'] {
+  background: url("./images/капуста.png") center center no-repeat;
+  background-size: contain;
+}
+
+
+.item__button {
   font-weight: 600;
+  font-size: 15px;
   color: white;
-  background-color: rgb(252, 87, 46);
-  border-radius: 4px;
+  background-color: rgb(255, 85, 43);
+  border-radius: 6px;
   border: none;
-  padding: 5px;
+  padding: 6px;
   cursor: pointer;
   transition: background-color .3s;
 }
 
-.item__button:hover, .riddle__button:hover {
-  background-color: rgb(252, 56, 7);
+.item__button:hover {
+  background-color: rgb(243, 49, 0);
 }
+
+.control {
+  display: block;
+  height: 29px;
+  width: 29px;
+  border-radius: 6px;
+  border: none;
+  background-color: rgb(255, 85, 43);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.control::after {
+  content: '';
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+.replace::after {
+  background: url(./svg/replace.svg) center center no-repeat;
+  background-size: contain;
+}
+
+.control.left::after {
+  background: url(./svg/left.svg) center center no-repeat;
+  background-size: contain;
+}
+
+.control.right::after {
+  background: url(./svg/right.svg) center center no-repeat;
+  background-size: contain;
+}
+
 
 .riddle__boat {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: rgb(131, 93, 58);
   width: 200px;
   height: 80px;
-  border-radius: 50px;
+  background: url(./images/лодка.png) center center no-repeat;
+  background-size: contain;
+  transform: scaleX(-1);
 }
 
 .riddle__boat .item__person {
-  background: rgb(145, 165, 255);
+  transform: translateY(-30px);
 }
 
-.riddle__buttons {
+
+.riddle__controls {
   display: flex;
   column-gap: 10px;
 }

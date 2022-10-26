@@ -33,10 +33,10 @@ document.addEventListener('DOMContentLoaded', ()=> {
         
         let person = document.createElement('div');
         person.classList.add('item__person');
-        person.innerText = element;
+        person.dataset['name'] = element;
         item.appendChild(person);
         
-        if(array !== mid) {
+        if (array !== mid) {
           let button = document.createElement('button');
           button.classList.add('item__button');
           button.dataset['name'] = element;
@@ -54,14 +54,13 @@ document.addEventListener('DOMContentLoaded', ()=> {
         let obj = event.target.previousElementSibling;
 
         if (mid.length < 1) {
-          mid.push(obj.innerText);
+          mid.push(obj.dataset['name']);
           midContainer.appendChild(obj);
 
-          start = start.filter(item => item !== obj.innerText);
-          end = end.filter(item => item !== obj.innerText);
+          start = start.filter(item => item !== obj.dataset['name']);
+          end = end.filter(item => item !== obj.dataset['name']);
           renderArray(start, startContainer);
           renderArray(end, endContainer);
-
 
         } else if (mid.length === 1) {
           alert('Можно певезти только одного за раз!');
