@@ -8,6 +8,10 @@
   @include tablets {
     column-gap: rem(7px);
   }
+
+  @include phonesPortrait {
+    column-gap: rem(15px);
+  }
 }
 
 .item {
@@ -22,24 +26,29 @@
   width: rem(70px);
   height: rem(70px);
   
-  @include tablets {
-    width: 10vmin;
-    height: 10vmin;
+  @include phonesPortrait {
+    width: 20vmin;
+    height: 20vmin;
+  }
+
+  @include phonesLandscape {
+    width: 20vmin;
+    height: 20vmin;
   }
 }
 
 .item__person[data-name='волк'] {
-  background: url("./images/волк.png") center center no-repeat;
+  background: url(./images/волк.png) center center no-repeat;
   background-size: contain;
 }
 
 .item__person[data-name='коза'] {
-  background: url("./images/коза.png") center center no-repeat;
+  background: url(./images/коза.png) center center no-repeat;
   background-size: contain;
 }
 
 .item__person[data-name='капуста'] {
-  background: url("./images/капуста.png") center center no-repeat;
+  background: url(./images/капуста.png) center center no-repeat;
   background-size: contain;
 }
 

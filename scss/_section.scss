@@ -4,6 +4,18 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  @include phonesPortrait {
+    height: auto;
+    min-height: 100vh;
+    padding-top: rem(50px);
+  }
+
+  @include phonesLandscape {
+    height: auto;
+    min-height: 100vh;
+    padding-top: rem(50px);
+  }
 }
 
 .section__headline {
@@ -15,7 +27,7 @@
   margin-bottom: rem(20px);
 
   @include tablets {
-    width: 80%;
+    width: 90%;
   }
 }
 
@@ -27,26 +39,21 @@
   text-align: center;
 }
 
+// .section__instruction {
+//   position: absolute;
+//   max-width: 60%;
+//   top: rem(20px);
+//   left: rem(20px);
+
+//   @include tablets {
+//     display: none;
+//   }
+// }
+
 .section__instruction {
-  position: absolute;
-  max-width: 60%;
-  top: rem(20px);
-  left: rem(20px);
-
-  @include tablets {
-    display: none;
-  }
-}
-
-.section__instruction.mobile {
   max-width: 100%;
   text-align: center;
   top: 0;
   left: 0;
   position: relative;
-  display: none;
-
-  @include tablets {
-    display: block;
-  }
 }

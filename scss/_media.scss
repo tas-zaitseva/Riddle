@@ -8,7 +8,7 @@
   }
 }
 
-@mixin phones {
+@mixin phonesPortrait {
   @media screen and (max-width: $phones) and (orientation: portrait){
     @content;
   }

@@ -8,6 +8,14 @@ html {
   @include tablets {
     font-size: calc($baseFontSize - 1px);
   }
+  
+  @include phonesLandscape {
+    font-size: 4.5vmin;
+  }
+
+  @include phonesPortrait {
+    font-size: 4.5vmin;
+  }
 }
 
 body {

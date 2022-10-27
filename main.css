@@ -38,6 +38,16 @@ html {
     font-size: 15px;
   }
 }
+@media screen and (max-height: 540px) and (orientation: landscape) {
+  html {
+    font-size: 4.5vmin;
+  }
+}
+@media screen and (max-width: 480px) and (orientation: portrait) {
+  html {
+    font-size: 4.5vmin;
+  }
+}
 
 body {
   margin: 0;
@@ -83,6 +93,20 @@ button {
       -ms-flex-align: center;
           align-items: center;
 }
+@media screen and (max-width: 480px) and (orientation: portrait) {
+  .section {
+    height: auto;
+    min-height: 100vh;
+    padding-top: 3.125rem;
+  }
+}
+@media screen and (max-height: 540px) and (orientation: landscape) {
+  .section {
+    height: auto;
+    min-height: 100vh;
+    padding-top: 3.125rem;
+  }
+}
 
 .section__headline {
   display: -webkit-box;
@@ -101,7 +125,7 @@ button {
 }
 @media screen and (max-width: 768px) {
   .section__headline {
-    width: 80%;
+    width: 90%;
   }
 }
 
@@ -114,29 +138,11 @@ button {
 }
 
 .section__instruction {
-  position: absolute;
-  max-width: 60%;
-  top: 1.25rem;
-  left: 1.25rem;
-}
-@media screen and (max-width: 768px) {
-  .section__instruction {
-    display: none;
-  }
-}
-
-.section__instruction.mobile {
   max-width: 100%;
   text-align: center;
   top: 0;
   left: 0;
   position: relative;
-  display: none;
-}
-@media screen and (max-width: 768px) {
-  .section__instruction.mobile {
-    display: block;
-  }
 }
 
 .riddle {
@@ -150,10 +156,33 @@ button {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  height: 25.625rem;
-  background: url("../images/beach.png") center bottom no-repeat;
-  background-size: 100% 100%;
+  height: 28.125rem;
+  background: url(./images/beach.png) center bottom no-repeat;
+  background-size: contain;
   position: relative;
+}
+@media screen and (max-width: 768px) {
+  .riddle {
+    height: 23.125rem;
+    background-size: auto 100%;
+    background-position: right bottom;
+  }
+}
+@media screen and (max-width: 480px) and (orientation: portrait) {
+  .riddle {
+    height: 100vh;
+    background: url(./images/beach_portrait.png) center center no-repeat;
+    background-size: cover;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+@media screen and (max-height: 540px) and (orientation: landscape) {
+  .riddle {
+    height: 100vh;
+  }
 }
 
 .riddle__block {
@@ -173,8 +202,27 @@ button {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
-  row-gap: 2.5rem;
+  row-gap: 1.875rem;
   display: flex;
+}
+@media screen and (max-width: 768px) {
+  .riddle__block {
+    row-gap: 1.25rem;
+  }
+}
+@media screen and (max-width: 480px) and (orientation: portrait) {
+  .riddle__block {
+    width: 100%;
+    height: 100%;
+    row-gap: 1.25rem;
+    padding: 0.625rem 0.3125rem;
+  }
+}
+
+.riddle__block:nth-child(2) .riddle__block-content {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 
 .riddle__block-content {
@@ -197,9 +245,32 @@ button {
       -ms-flex: 1 1;
           flex: 1 1;
 }
+@media screen and (max-width: 480px) and (orientation: portrait) {
+  .riddle__block-content {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
 
-.riddle__block:nth-child(2) .riddle__block-content {
-  row-gap: 1.25rem;
+.riddle__block-title {
+  background: white;
+  border-radius: 3px;
+  padding: 0.25rem 0.375rem;
+}
+@media screen and (max-width: 480px) and (orientation: portrait) {
+  .riddle__block-title {
+    display: none;
+  }
+}
+
+.riddle__block-title.mobile {
+  display: none;
+}
+@media screen and (max-width: 480px) and (orientation: portrait) {
+  .riddle__block-title.mobile {
+    display: block;
+  }
 }
 
 .riddle__boat {
@@ -214,7 +285,7 @@ button {
           align-items: center;
   width: 95%;
   height: 50%;
-  background: url(./images/лодка.png) center center no-repeat;
+  background: url(./images/лодка.png) center bottom no-repeat;
   background-size: contain;
   -webkit-transform: scaleX(-1);
           transform: scaleX(-1);
@@ -225,10 +296,22 @@ button {
     height: 45%;
   }
 }
+@media screen and (max-width: 480px) and (orientation: portrait) {
+  .riddle__boat {
+    width: 100%;
+    height: 60%;
+  }
+}
 
 .riddle__boat .item__person {
   -webkit-transform: translateY(-42%);
           transform: translateY(-42%);
+}
+@media screen and (max-width: 480px) and (orientation: portrait) {
+  .riddle__boat .item__person {
+    -webkit-transform: translateY(-40%);
+            transform: translateY(-40%);
+  }
 }
 
 .riddle__controls {
@@ -238,6 +321,20 @@ button {
   -webkit-column-gap: 0.625rem;
      -moz-column-gap: 0.625rem;
           column-gap: 0.625rem;
+}
+@media screen and (max-width: 480px) and (orientation: portrait) {
+  .riddle__controls {
+    -webkit-column-gap: 0.9375rem;
+       -moz-column-gap: 0.9375rem;
+            column-gap: 0.9375rem;
+  }
+}
+@media screen and (max-height: 540px) and (orientation: landscape) {
+  .riddle__controls {
+    -webkit-column-gap: 0.9375rem;
+       -moz-column-gap: 0.9375rem;
+            column-gap: 0.9375rem;
+  }
 }
 
 .items {
@@ -259,6 +356,13 @@ button {
     -webkit-column-gap: 0.4375rem;
        -moz-column-gap: 0.4375rem;
             column-gap: 0.4375rem;
+  }
+}
+@media screen and (max-width: 480px) and (orientation: portrait) {
+  .items {
+    -webkit-column-gap: 0.9375rem;
+       -moz-column-gap: 0.9375rem;
+            column-gap: 0.9375rem;
   }
 }
 
@@ -283,25 +387,31 @@ button {
   width: 4.375rem;
   height: 4.375rem;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 480px) and (orientation: portrait) {
   .item__person {
-    width: 10vmin;
-    height: 10vmin;
+    width: 20vmin;
+    height: 20vmin;
+  }
+}
+@media screen and (max-height: 540px) and (orientation: landscape) {
+  .item__person {
+    width: 20vmin;
+    height: 20vmin;
   }
 }
 
 .item__person[data-name=волк] {
-  background: url("./images/волк.png") center center no-repeat;
+  background: url(./images/волк.png) center center no-repeat;
   background-size: contain;
 }
 
 .item__person[data-name=коза] {
-  background: url("./images/коза.png") center center no-repeat;
+  background: url(./images/коза.png) center center no-repeat;
   background-size: contain;
 }
 
 .item__person[data-name=капуста] {
-  background: url("./images/капуста.png") center center no-repeat;
+  background: url(./images/капуста.png) center center no-repeat;
   background-size: contain;
 }
 
@@ -340,6 +450,18 @@ button {
       -ms-flex-pack: center;
           justify-content: center;
 }
+@media screen and (max-width: 480px) and (orientation: portrait) {
+  .control {
+    height: 2.1875rem;
+    width: 2.1875rem;
+  }
+}
+@media screen and (max-height: 540px) and (orientation: landscape) {
+  .control {
+    height: 2.1875rem;
+    width: 2.1875rem;
+  }
+}
 
 .control--inline {
   display: inline-block;
@@ -353,6 +475,12 @@ button {
   display: block;
   height: 100%;
   width: 100%;
+}
+@media screen and (max-width: 480px) and (orientation: portrait) {
+  .control::after {
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+  }
 }
 
 .control.left::after {

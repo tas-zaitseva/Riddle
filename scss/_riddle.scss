@@ -3,10 +3,27 @@
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  height: rem(410px);
-  background: url("../images/beach.png") center bottom no-repeat;
-  background-size: 100% 100%;
+  height: rem(450px);
+  background: url(./images/beach.png) center bottom no-repeat;
+  background-size: contain;
   position: relative;
+  
+  @include tablets {
+    height: rem(370px);
+    background-size: auto 100%;
+    background-position: right bottom;
+  }
+  
+  @include phonesPortrait {
+    height: 100vh;
+    background: url(./images/beach_portrait.png) center center no-repeat;
+    background-size: cover;
+    flex-direction: column;
+  }
+
+  @include phonesLandscape {
+    height: 100vh;
+  }
 }
 
 .riddle__block {
@@ -17,8 +34,23 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-end;
-  row-gap: rem(40px);
+  row-gap: rem(30px);
   display: flex;
+  
+  @include tablets {
+    row-gap: rem(20px);
+  }
+  
+  @include phonesPortrait {
+    width: 100%;
+    height: 100%;
+    row-gap: rem(20px);
+    padding: rem(10px) rem(5px);
+  }
+}
+
+.riddle__block:nth-child(2) .riddle__block-content {
+  justify-content: flex-end;
 }
 
 .riddle__block-content {
@@ -29,11 +61,26 @@
   align-items: center;
   justify-content: flex-end;
   flex: 1 1 ;
+
+  @include phonesPortrait {
+    justify-content: center;
+  }
 }
 
-.riddle__block:nth-child(2) {
-  .riddle__block-content {
-    row-gap: rem(20px);
+.riddle__block-title {
+  background: white;
+  border-radius: 3px;
+  padding: rem(4px) rem(6px);
+  @include phonesPortrait {
+    display: none;
+  }
+}
+
+.riddle__block-title.mobile {
+  display: none;
+
+  @include phonesPortrait {
+    display: block;
   }
 }
 
@@ -43,7 +90,7 @@
   align-items: center;
   width: 95%;
   height: 50%;
-  background: url(./images/лодка.png) center center no-repeat;
+  background: url(./images/лодка.png) center bottom no-repeat;
   background-size: contain;
   transform: scaleX(-1);
 
@@ -51,13 +98,30 @@
     width: 90%;
     height: 45%;
   }
+
+  @include phonesPortrait {
+    width: 100%;
+    height: 60%;
+  }
 }
 
 .riddle__boat .item__person {
   transform: translateY(-42%);
+  
+  @include phonesPortrait {
+    transform: translateY(-40%);    
+  }
 }
 
 .riddle__controls {
   display: flex;
   column-gap: rem(10px);
+  
+  @include phonesPortrait {
+    column-gap: rem(15px);
+  }
+
+  @include phonesLandscape {
+    column-gap: rem(15px);
+  }
 }

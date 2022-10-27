@@ -9,6 +9,16 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @include phonesPortrait {
+    height: rem(35px);
+    width: rem(35px);
+  }
+
+  @include phonesLandscape {
+    height: rem(35px);
+    width: rem(35px);
+  }
 }
 
 .control--inline {
@@ -23,6 +33,10 @@
   display: block;
   height: 100%;
   width: 100%;
+  
+  @include phonesPortrait {
+    transform: rotate(90deg);
+  }
 }
 
 .control.left::after {

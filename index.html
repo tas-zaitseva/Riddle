@@ -14,16 +14,18 @@
         <div class="section__headline">
           <h2 class="section__title">Волк, коза и капуста</h2>
           <div class="section__subtitle">Крестьянину нужно перевезти через реку волка, козу и капусту. Но лодка такова, что в ней может поместиться только крестьянин, а с ним или волк, или коза, или капуста. Но если оставить волка с козой, то волк съест козу, а если оставить козу с капустой, то коза съест капусту. Как перевезти всех на другой берег?</div>
-          <div class="section__instruction mobile">Используйте кнопки вида <button class="control control--inline left"></button> и <button class="control control--inline right"></button> , чтобы перевезти персонажа на другой берег или вернуть обратно. Используйте кнопки вида <button class="control control--inline replace"></button> , чтобы сменить местами персонажа в лодке и оставшегося на берегу.</div>
+          <div class="section__instruction">Используйте кнопки вида <button class="control control--inline right"></button> и <button class="control control--inline left"></button> , чтобы перевезти персонажа на другой берег или вернуть обратно. Используйте кнопки вида <button class="control control--inline replace"></button> , чтобы сменить местами персонажа в лодке и оставшегося на берегу.</div>
         </div>
         <div class="riddle">
           <div class="riddle__block">
+            <h3 class="riddle__block-title mobile">Левый берег</h3>
             <div class="riddle__block-content">
               <ul class="riddle__items items" id="start"></ul>
             </div>
             <h3 class="riddle__block-title">Левый берег</h3>
           </div>
           <div class="riddle__block">
+            <h3 class="riddle__block-title mobile">Лодка</h3>
             <div class="riddle__block-content">
               <div class="riddle__boat" id="mid"></div>
               <ul class="riddle__controls">
@@ -44,12 +46,12 @@
             <h3 class="riddle__block-title">Лодка</h3>
           </div>
           <div class="riddle__block">
+            <h3 class="riddle__block-title mobile">Правый берег</h3>
             <div class="riddle__block-content">
               <ul class="riddle__items items" id="end"></ul>
             </div>
             <h3 class="riddle__block-title">Правый берег</h3>
           </div>
-          <div class="section__instruction">Используйте кнопки вида <button class="control control--inline left"></button> и <button class="control control--inline right"></button> , чтобы перевезти персонажа на другой берег или вернуть обратно. Используйте кнопки вида <button class="control control--inline replace"></button> , чтобы сменить местами персонажа в лодке и оставшегося на берегу.</div>
           <div class="overlay hidden" id="overlay">
             <div class="modal" id="modal">
               <div class="modal__text"></div>
