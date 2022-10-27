@@ -82,12 +82,11 @@ document.addEventListener('DOMContentLoaded', ()=> {
     //обработчик клика по кнопке персонажа для помещения его в лодку
     document.addEventListener('click', event=> {
 
-      
       if (event.target.classList.contains('item__button')) {
         event.preventDefault();
         
-        if (score === 0) {
-          timer = setInterval(()=> {score +=1;}, 1000);
+        if (score === 0 && !timer) {
+          timer = setInterval(()=> {score +=1; console.log(score)}, 1000);
         }
 
         let obj = event.target.previousElementSibling;
@@ -135,7 +134,9 @@ document.addEventListener('DOMContentLoaded', ()=> {
         overlay.classList.remove('hidden');
 
       } else if (end.length === 3) {
+        if (timer) {
           timer = clearInterval(timer);
+        }
 
         let array = JSON.parse(storage.getItem('result'));
         array.push(score);
