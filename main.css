@@ -71,6 +71,11 @@ button {
   white-space: nowrap;
 }
 
+svg {
+  width: 100%;
+  height: 100%;
+}
+
 .container {
   margin: 0 auto;
   width: 100%;
@@ -449,6 +454,7 @@ button {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  padding: 0.25rem;
 }
 @media screen and (max-width: 480px) and (orientation: portrait) {
   .control {
@@ -470,32 +476,11 @@ button {
   cursor: auto;
 }
 
-.control::after {
-  content: "";
-  display: block;
-  height: 100%;
-  width: 100%;
-}
 @media screen and (max-width: 480px) and (orientation: portrait) {
-  .control::after {
+  .control__pic {
     -webkit-transform: rotate(90deg);
             transform: rotate(90deg);
   }
-}
-
-.control.left::after {
-  background: url(./svg/left.svg) center center no-repeat;
-  background-size: contain;
-}
-
-.control.right::after {
-  background: url(./svg/right.svg) center center no-repeat;
-  background-size: contain;
-}
-
-.replace::after {
-  background: url(./svg/replace.svg) center center no-repeat;
-  background-size: contain;
 }
 
 .overlay {

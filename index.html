@@ -14,7 +14,8 @@
         <div class="section__headline">
           <h2 class="section__title">Волк, коза и капуста</h2>
           <div class="section__subtitle">Крестьянину нужно перевезти через реку волка, козу и капусту. Но лодка такова, что в ней может поместиться только крестьянин, а с ним или волк, или коза, или капуста. Но если оставить волка с козой, то волк съест козу, а если оставить козу с капустой, то коза съест капусту. Как перевезти всех на другой берег?</div>
-          <div class="section__instruction">Используйте кнопки вида <button class="control control--inline right"></button> и <button class="control control--inline left"></button> , чтобы перевезти персонажа на другой берег или вернуть обратно. Используйте кнопки вида <button class="control control--inline replace"></button> , чтобы сменить местами персонажа в лодке и оставшегося на берегу.</div>
+          <div class="section__instruction">Используйте кнопки вида <div class="control control--inline right"><svg class="control__pic"><use xlink:href="svg/sprite.svg#right"></use></svg></div> и <div class="control control--inline left"><svg class="control__pic"><use xlink:href="svg/sprite.svg#left"></use></svg></div> , чтобы перевезти персонажа на другой берег или вернуть обратно. 
+          Используйте кнопки вида <div class="control control--inline replace"><svg class="control__pic"><use xlink:href="svg/sprite.svg#replace"></use></svg></div> , чтобы сменить местами персонажа в лодке и оставшегося на берегу.</div>
           <div class="section__result score">Лучший результат: <span></span> секунд</div>
         </div>
         <div class="riddle">
@@ -31,16 +32,32 @@
               <div class="riddle__boat" id="mid"></div>
               <ul class="riddle__controls">
                 <li class="riddle__control">
-                  <button class="control replace" id="changePrev"></button>
+                  <a class="control replace" id="changePrev">
+                    <svg class="control__pic">
+                      <use xlink:href="svg/sprite.svg#replace"></use>
+                    </svg>
+                  </a>
                 </li>
                 <li class="riddle__control">
-                  <button class="control left" id="prev"></button>
+                  <a class="control left" id="prev">
+                    <svg class="control__pic">
+                      <use xlink:href="svg/sprite.svg#left"></use>
+                    </svg>
+                  </a>
                 </li>
                 <li class="riddle__control">
-                  <button class="control right" id="next"></button>
+                  <a class="control right" id="next">
+                    <svg class="control__pic">
+                      <use xlink:href="svg/sprite.svg#right"></use>
+                    </svg>
+                  </a>
                 </li>
                 <li class="riddle__control">
-                  <button class="control replace" id="changeNext"></button>
+                  <a class="control replace" id="changeNext">
+                    <svg class="control__pic">
+                      <use xlink:href="svg/sprite.svg#replace"></use>
+                    </svg>
+                  </a>
                 </li>
               </ul>
             </div>

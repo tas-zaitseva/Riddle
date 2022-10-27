@@ -9,6 +9,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: rem(4px);
 
   @include phonesPortrait {
     height: rem(35px);
@@ -28,28 +29,9 @@
   cursor: auto;
 }
 
-.control::after {
-  content: '';
-  display: block;
-  height: 100%;
-  width: 100%;
-  
+.control__pic {
+
   @include phonesPortrait {
     transform: rotate(90deg);
   }
-}
-
-.control.left::after {
-  background: url(./svg/left.svg) center center no-repeat;
-  background-size: contain;
-}
-
-.control.right::after {
-  background: url(./svg/right.svg) center center no-repeat;
-  background-size: contain;
-}
-
-.replace::after {
-  background: url(./svg/replace.svg) center center no-repeat;
-  background-size: contain;
 }
