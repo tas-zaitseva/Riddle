@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', ()=> {
         event.preventDefault();
         
         if (score === 0 && !timer) {
-          timer = setInterval(()=> {score +=1; console.log(score)}, 1000);
+          timer = setInterval(()=> {score +=1;}, 1000);
         }
 
         let obj = event.target.previousElementSibling;
