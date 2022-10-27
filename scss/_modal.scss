@@ -1,13 +1,13 @@
 .modal {
   max-width: 300px;
-  padding: 30px 20px;
+  padding: rem(30px) rem(20px);
   background: white;
   border-radius: 3px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  row-gap: 15px;
+  row-gap: rem(15px);
 }
 
 .modal__text {
@@ -16,10 +16,10 @@
 
 .modal__button {
   background-color: rgb(241, 3, 3);
-  padding: 15px 20px;
-  border-radius: 30px;
+  padding: rem(15px) rem(20px);
+  border-radius: rem(30px);
   color: white;
-  font-size: 14px;
+  font-size: rem(14px);
   font-weight: 600;
   text-transform: uppercase;
   border: none;

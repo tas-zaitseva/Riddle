@@ -3,7 +3,7 @@
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  height: 410px;
+  height: rem(410px);
   background: url("../images/beach.png") center bottom no-repeat;
   background-size: 100% 100%;
   position: relative;
@@ -11,37 +11,53 @@
 
 .riddle__block {
   width: 33%;
-  padding: 20px 10px;
+  height: 60%;
+  padding: rem(20px) rem(5px);
   display: flex;
   flex-direction: column;
   align-items: center;
-  row-gap: 20px;
+  justify-content: flex-end;
+  row-gap: rem(40px);
   display: flex;
 }
 
 .riddle__block-content {
+  width: 100%;
   display: flex;
   flex-direction: column;
-  row-gap: 10px;
+  row-gap: rem(10px);
   align-items: center;
+  justify-content: flex-end;
+  flex: 1 1 ;
+}
+
+.riddle__block:nth-child(2) {
+  .riddle__block-content {
+    row-gap: rem(20px);
+  }
 }
 
 .riddle__boat {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 200px;
-  height: 80px;
+  width: 95%;
+  height: 50%;
   background: url(./images/лодка.png) center center no-repeat;
   background-size: contain;
   transform: scaleX(-1);
+
+  @include tablets {
+    width: 90%;
+    height: 45%;
+  }
 }
 
 .riddle__boat .item__person {
-  transform: translateY(-30px);
+  transform: translateY(-42%);
 }
 
 .riddle__controls {
   display: flex;
-  column-gap: 10px;
+  column-gap: rem(10px);
 }

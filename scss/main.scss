@@ -28,8 +28,16 @@
   font-weight: 700;
 }
 
+//sizes 
+$baseFontSize: 16px;
+
+//breakpoints
+$tablets: 768px;
+$phones: 480px;
+
 //importing files
 @import url(https://necolas.github.io/normalize.css/8.0.1/normalize.css);
+@import 'media';
 @import 'layout';
 @import 'section';
 @import 'riddle';

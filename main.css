@@ -30,6 +30,15 @@
           box-sizing: border-box;
 }
 
+html {
+  font-size: 16px;
+}
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 15px;
+  }
+}
+
 body {
   margin: 0;
   font-family: "Gilroy", Arial, Helvetica, sans-serif;
@@ -46,6 +55,10 @@ li {
 
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
+}
+
+button {
+  white-space: nowrap;
 }
 
 .container {
@@ -72,29 +85,58 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .section__headline {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  row-gap: 1.25rem;
   width: 60%;
-  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
+}
+@media screen and (max-width: 768px) {
+  .section__headline {
+    width: 80%;
+  }
 }
 
 .section__title {
   text-align: center;
-  margin-bottom: 20px;
 }
 
 .section__subtitle {
   text-align: center;
-  margin-bottom: 20px;
 }
 
 .section__instruction {
   position: absolute;
-  width: 60%;
-  top: 20px;
-  left: 20px;
+  max-width: 60%;
+  top: 1.25rem;
+  left: 1.25rem;
+}
+@media screen and (max-width: 768px) {
+  .section__instruction {
+    display: none;
+  }
 }
 
 .section__instruction.mobile {
+  max-width: 100%;
+  text-align: center;
+  top: 0;
+  left: 0;
+  position: relative;
   display: none;
+}
+@media screen and (max-width: 768px) {
+  .section__instruction.mobile {
+    display: block;
+  }
 }
 
 .riddle {
@@ -108,7 +150,7 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  height: 410px;
+  height: 25.625rem;
   background: url("../images/beach.png") center bottom no-repeat;
   background-size: 100% 100%;
   position: relative;
@@ -116,7 +158,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .riddle__block {
   width: 33%;
-  padding: 20px 10px;
+  height: 60%;
+  padding: 1.25rem 0.3125rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -127,11 +170,15 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  row-gap: 20px;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  row-gap: 2.5rem;
   display: flex;
 }
 
 .riddle__block-content {
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -139,10 +186,20 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  row-gap: 10px;
+  row-gap: 0.625rem;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1;
+          flex: 1 1;
+}
+
+.riddle__block:nth-child(2) .riddle__block-content {
+  row-gap: 1.25rem;
 }
 
 .riddle__boat {
@@ -155,35 +212,54 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 200px;
-  height: 80px;
+  width: 95%;
+  height: 50%;
   background: url(./images/лодка.png) center center no-repeat;
   background-size: contain;
   -webkit-transform: scaleX(-1);
           transform: scaleX(-1);
 }
+@media screen and (max-width: 768px) {
+  .riddle__boat {
+    width: 90%;
+    height: 45%;
+  }
+}
 
 .riddle__boat .item__person {
-  -webkit-transform: translateY(-30px);
-          transform: translateY(-30px);
+  -webkit-transform: translateY(-42%);
+          transform: translateY(-42%);
 }
 
 .riddle__controls {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-column-gap: 10px;
-     -moz-column-gap: 10px;
-          column-gap: 10px;
+  -webkit-column-gap: 0.625rem;
+     -moz-column-gap: 0.625rem;
+          column-gap: 0.625rem;
 }
 
 .items {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-column-gap: 20px;
-     -moz-column-gap: 20px;
-          column-gap: 20px;
+  -webkit-column-gap: 1.25rem;
+     -moz-column-gap: 1.25rem;
+          column-gap: 1.25rem;
+  row-gap: 0.4375rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap-reverse;
+      flex-wrap: wrap-reverse;
+}
+@media screen and (max-width: 768px) {
+  .items {
+    -webkit-column-gap: 0.4375rem;
+       -moz-column-gap: 0.4375rem;
+            column-gap: 0.4375rem;
+  }
 }
 
 .item {
@@ -197,12 +273,21 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  row-gap: 5px;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  row-gap: 0.3125rem;
 }
 
 .item__person {
-  width: 70px;
-  height: 70px;
+  width: 4.375rem;
+  height: 4.375rem;
+}
+@media screen and (max-width: 768px) {
+  .item__person {
+    width: 10vmin;
+    height: 10vmin;
+  }
 }
 
 .item__person[data-name=волк] {
@@ -222,12 +307,12 @@ h1, h2, h3, h4, h5, h6 {
 
 .item__button {
   font-weight: 600;
-  font-size: 15px;
+  font-size: 0.9375rem;
   color: white;
   background-color: rgb(255, 85, 43);
-  border-radius: 6px;
+  border-radius: 0.375rem;
   border: none;
-  padding: 6px;
+  padding: 0.375rem;
   cursor: pointer;
   -webkit-transition: background-color 0.3s;
   transition: background-color 0.3s;
@@ -239,9 +324,9 @@ h1, h2, h3, h4, h5, h6 {
 
 .control {
   display: block;
-  height: 29px;
-  width: 29px;
-  border-radius: 6px;
+  height: 1.8125rem;
+  width: 1.8125rem;
+  border-radius: 0.375rem;
   border: none;
   background-color: rgb(255, 85, 43);
   cursor: pointer;
@@ -307,7 +392,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .modal {
   max-width: 300px;
-  padding: 30px 20px;
+  padding: 1.875rem 1.25rem;
   background: white;
   border-radius: 3px;
   display: -webkit-box;
@@ -323,7 +408,7 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  row-gap: 15px;
+  row-gap: 0.9375rem;
 }
 
 .modal__text {
@@ -332,10 +417,10 @@ h1, h2, h3, h4, h5, h6 {
 
 .modal__button {
   background-color: rgb(241, 3, 3);
-  padding: 15px 20px;
-  border-radius: 30px;
+  padding: 0.9375rem 1.25rem;
+  border-radius: 1.875rem;
   color: white;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 600;
   text-transform: uppercase;
   border: none;

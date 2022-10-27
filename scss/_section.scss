@@ -7,27 +7,46 @@
 }
 
 .section__headline {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: rem(20px);
   width: 60%;
-  margin-bottom: 20px;
+  margin-bottom: rem(20px);
+
+  @include tablets {
+    width: 80%;
+  }
 }
 
 .section__title {
   text-align: center;
-  margin-bottom: 20px;
 }
 
 .section__subtitle {
   text-align: center;
-  margin-bottom: 20px;
 }
 
 .section__instruction {
   position: absolute;
-  width: 60%;
-  top: 20px;
-  left: 20px;
+  max-width: 60%;
+  top: rem(20px);
+  left: rem(20px);
+
+  @include tablets {
+    display: none;
+  }
 }
 
 .section__instruction.mobile {
+  max-width: 100%;
+  text-align: center;
+  top: 0;
+  left: 0;
+  position: relative;
   display: none;
+
+  @include tablets {
+    display: block;
+  }
 }
