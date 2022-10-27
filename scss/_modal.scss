@@ -30,3 +30,11 @@
 .modal__button:hover {
   background-color: rgb(223, 0, 0);
 }
+
+.modal__score, .score {
+  span {
+    font-size: rem(24px);
+    font-weight: 700;
+    color: rgb(255, 89, 205);
+  }
+}

@@ -560,3 +560,9 @@ button {
 .modal__button:hover {
   background-color: rgb(223, 0, 0);
 }
+
+.modal__score span, .score span {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: rgb(255, 89, 205);
+}

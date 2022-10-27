@@ -4,16 +4,34 @@ document.addEventListener('DOMContentLoaded', ()=> {
   let startContainer = document.querySelector('#start');
   let endContainer = document.querySelector('#end');
   let midContainer = document.querySelector('#mid');
+
   
   let prev = document.querySelector('#prev');
   let next = document.querySelector('#next');
   let changePrev = document.querySelector('#changePrev');
   let changeNext = document.querySelector('#changeNext');
-
+  
   let overlay = document.querySelector('#overlay');
   let modal = document.querySelector('#modal');
   let modalText = modal.querySelector('.modal__text');
+  let modalScore = document.querySelector('.modal__score');
   let modalBtn = document.querySelector('#modalBtn');
+  
+  //переменные для измерения времени
+  let score = 0;
+  let timer;
+  
+  //переменные для хранения времени
+  let result = document.querySelector('.section__result');
+  let storage = sessionStorage;
+  storage.setItem('result', '[]');
+
+  //проверка, есть ли что-то в storage
+  if (JSON.parse(storage.getItem('result')).length) {
+    result.firstElementChild.textContent = `${Math.min(...JSON.parse(storage.getItem('result')))}`;
+  } else {
+    result.firstElementChild.textContent = '0';
+  }
 
   //получение массива исходных элементов
   async function request(url) {
@@ -63,8 +81,15 @@ document.addEventListener('DOMContentLoaded', ()=> {
 
     //обработчик клика по кнопке персонажа для помещения его в лодку
     document.addEventListener('click', event=> {
+
+      
       if (event.target.classList.contains('item__button')) {
         event.preventDefault();
+        
+        if (score === 0) {
+          timer = setInterval(()=> {score +=1;}, 1000);
+        }
+
         let obj = event.target.previousElementSibling;
 
         if (mid.length < 1) {
@@ -110,8 +135,17 @@ document.addEventListener('DOMContentLoaded', ()=> {
         overlay.classList.remove('hidden');
 
       } else if (end.length === 3) {
+          timer = clearInterval(timer);
+
+        let array = JSON.parse(storage.getItem('result'));
+        array.push(score);
+        storage.setItem('result', JSON.stringify(array));
+        result.firstElementChild.textContent = `${Math.min(...array)}`;
+
         modalText.innerText = 'Ура! Вы перевезли всех. Никто никого не съел.';
+        modalScore.innerHTML = `Ваш результат: <span>${score}</span> секунд`;
         overlay.classList.remove('hidden');
+        score = 0;
       }
     })
 
@@ -137,6 +171,7 @@ document.addEventListener('DOMContentLoaded', ()=> {
     modalBtn.addEventListener('click', event=> {
       event.preventDefault();
       overlay.classList.add('hidden');
+      modalScore.innerHTML = '';
 
       if (!mid.length) {
         restartGame();
