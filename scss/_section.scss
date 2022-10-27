@@ -1,0 +1,33 @@
+.section {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.section__headline {
+  width: 60%;
+  margin-bottom: 20px;
+}
+
+.section__title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.section__subtitle {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.section__instruction {
+  position: absolute;
+  width: 60%;
+  top: 20px;
+  left: 20px;
+}
+
+.section__instruction.mobile {
+  display: none;
+}

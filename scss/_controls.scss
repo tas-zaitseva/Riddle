@@ -1,0 +1,41 @@
+.control {
+  display: block;
+  height: 29px;
+  width: 29px;
+  border-radius: 6px;
+  border: none;
+  background-color: rgb(255, 85, 43);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.control--inline {
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  cursor: auto;
+}
+
+.control::after {
+  content: '';
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+.control.left::after {
+  background: url(./svg/left.svg) center center no-repeat;
+  background-size: contain;
+}
+
+.control.right::after {
+  background: url(./svg/right.svg) center center no-repeat;
+  background-size: contain;
+}
+
+.replace::after {
+  background: url(./svg/replace.svg) center center no-repeat;
+  background-size: contain;
+}
